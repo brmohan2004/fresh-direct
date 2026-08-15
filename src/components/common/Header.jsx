@@ -147,13 +147,19 @@ export default function Header({ onToggleSidebar, categorySearchQuery = '', onCa
               <div
                 className={`header-location ${isAddressDropdownOpen ? 'active' : ''}`}
                 onClick={() => setIsAddressDropdownOpen((prev) => !prev)}
+                title="Change Delivery Location"
               >
-                <MapPin size={15} className="location-pin-icon" />
+                <div className="location-pin-badge">
+                  <MapPin size={14} className="location-pin-icon" />
+                </div>
                 <div className="location-info">
-                  <span className="location-label">Deliver to</span>
+                  <div className="location-header-row">
+                    <span className="location-label">Deliver to</span>
+                    {selectedAddress.tag && <span className="location-tag-pill">{selectedAddress.tag}</span>}
+                  </div>
                   <span className="location-value">{selectedAddress.address}</span>
                 </div>
-                <ChevronDown size={13} className={`location-arrow ${isAddressDropdownOpen ? 'rotated' : ''}`} />
+                <ChevronDown size={14} className={`location-arrow ${isAddressDropdownOpen ? 'rotated' : ''}`} />
               </div>
 
               {/* Saved Address Dropdown Popup */}

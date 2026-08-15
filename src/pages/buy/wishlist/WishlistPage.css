@@ -10,6 +10,7 @@
   background-color: var(--bg-main, #f9fafb);
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .wishlist-page-container {
@@ -20,6 +21,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  box-sizing: border-box;
 }
 
 /* Top Header */
@@ -54,12 +56,15 @@
   grid-template-columns: 1fr 340px;
   gap: 2rem;
   align-items: start;
+  width: 100%;
 }
 
 .wishlist-left-col {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  width: 100%;
+  min-width: 0;
 }
 
 /* Favorites Green Banner */
@@ -71,12 +76,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .favorites-banner-left {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
 }
 
 .heart-badge-icon {
@@ -94,6 +103,8 @@
 .favorites-text {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  min-width: 0;
 }
 
 .fav-title {
@@ -114,6 +125,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  width: 100%;
+  min-width: 0;
 }
 
 .category-tabs {
@@ -123,6 +136,8 @@
   overflow-x: auto;
   scrollbar-width: none;
   padding-bottom: 0.1rem;
+  flex: 1;
+  min-width: 0;
 }
 
 .category-tabs::-webkit-scrollbar {
@@ -140,6 +155,7 @@
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .tab-btn:hover {
@@ -197,6 +213,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
+  width: 100%;
 }
 
 /* Bottom Action Row */
@@ -206,6 +223,8 @@
   justify-content: space-between;
   margin-top: 0.5rem;
   padding-top: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-count {
@@ -271,6 +290,7 @@
   justify-content: center;
   text-align: center;
   gap: 0.75rem;
+  width: 100%;
 }
 
 .empty-wishlist-icon {
@@ -317,10 +337,15 @@
   .wishlist-page-container {
     padding: 1rem 1rem 6rem 1rem;
     gap: 1rem;
+    overflow-x: hidden;
   }
 
   .desktop-only {
     display: none !important;
+  }
+
+  .wishlist-controls-bar {
+    gap: 0.5rem;
   }
 
   .wishlist-bottom-row {

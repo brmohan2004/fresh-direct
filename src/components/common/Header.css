@@ -153,25 +153,91 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.4rem 0.85rem;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.625rem;
+  padding: 0.35rem 0.7rem 0.35rem 0.45rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 9999px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  min-height: 42px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .header-location:hover,
 .header-location.active {
-  background: #f1f5f9;
-  border-color: #cbd5e1;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  box-shadow: 0 3px 10px rgba(22, 163, 74, 0.12);
+}
+
+.location-pin-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f0fdf4;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.header-location:hover .location-pin-badge,
+.header-location.active .location-pin-badge {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.15;
+}
+
+.location-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.location-label {
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.location-tag-pill {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #16a34a;
+  background: #dcfce7;
+  padding: 0.02rem 0.35rem;
+  border-radius: 0.25rem;
+  line-height: 1;
+}
+
+.location-value {
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #1f2937;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .location-arrow {
-  color: #94a3b8;
+  color: #9ca3af;
   flex-shrink: 0;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+}
+
+.header-location:hover .location-arrow,
+.header-location.active .location-arrow {
+  color: #16a34a;
 }
 
 .location-arrow.rotated {
@@ -573,13 +639,18 @@
   }
 
   .header-location {
-    padding: 0.35rem 0.55rem;
-    border-radius: 0.5rem;
-    min-height: 36px;
+    padding: 0.25rem 0.55rem 0.25rem 0.35rem;
+    min-height: 34px;
+  }
+
+  .location-pin-badge {
+    width: 24px;
+    height: 24px;
   }
 
   .location-value {
-    max-width: 120px;
+    max-width: 105px;
+    font-size: 0.78rem;
   }
 
   .action-btn {
