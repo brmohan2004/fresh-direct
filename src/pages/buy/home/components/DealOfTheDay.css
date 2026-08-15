@@ -1,6 +1,6 @@
 /* ==========================================================================
    DealOfTheDay Component Styles
-   Multi-colored gradient container for maximum attraction
+   Multi-colored gradient container with right-aligned countdown timer
    ========================================================================== */
 
 .deal-of-the-day-container {
@@ -31,9 +31,17 @@
 
 .deal-header {
   display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
   z-index: 2;
+  gap: 0.5rem;
+}
+
+.deal-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
 }
 
 .deal-badge {
@@ -49,6 +57,7 @@
   border-radius: 9999px;
   border: 1px solid #fdba74;
   width: fit-content;
+  margin-bottom: 0.1rem;
 }
 
 .flame-icon {
@@ -63,17 +72,66 @@
 }
 
 .deal-title {
-  font-size: var(--font-xl);
+  font-size: clamp(1.05rem, 1.3vw, 1.25rem);
   font-weight: 800;
   color: #7c2d12;
+  line-height: 1.2;
   letter-spacing: -0.01em;
+}
+
+/* Right-aligned Countdown Timer Box */
+.deal-countdown-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+}
+
+.timer-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #c2410c;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.timer-digits {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  color: #ffffff;
+  padding: 0.22rem 0.55rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 10px rgba(234, 88, 12, 0.25);
+  font-size: 0.775rem;
+  font-weight: 800;
+}
+
+.clock-icon {
+  margin-right: 0.2rem;
+  color: #ffedd5;
+}
+
+.digit-box {
+  background: rgba(0, 0, 0, 0.22);
+  padding: 0.05rem 0.25rem;
+  border-radius: 0.25rem;
+  font-family: monospace;
+  letter-spacing: 0.02em;
+}
+
+.digit-colon {
+  font-weight: 800;
+  color: #ffedd5;
+  margin: 0 0.05rem;
 }
 
 /* Single Row Horizontal Scrolling Container */
 .deal-of-the-day-container .products-horizontal-row {
   display: flex;
   align-items: stretch;
-  gap: clamp(0.625rem, 1.2vw, 1rem);
+  gap: clamp(0.5rem, 1vw, 0.75rem);
   overflow-x: auto;
   padding: 0.25rem 0.25rem 0.5rem 0.25rem;
   scrollbar-width: none; /* Firefox */
@@ -89,8 +147,8 @@
 }
 
 .deal-of-the-day-container .product-card-item {
-  min-width: clamp(160px, 14vw, 190px);
-  max-width: 200px;
+  min-width: clamp(140px, 12vw, 165px);
+  max-width: 170px;
   flex-shrink: 0;
   scroll-snap-align: start;
   display: flex;
@@ -114,7 +172,12 @@
   }
 
   .deal-of-the-day-container .product-card-item {
-    min-width: 145px;
-    max-width: 165px;
+    min-width: 130px;
+    max-width: 145px;
+  }
+
+  .timer-digits {
+    padding: 0.18rem 0.45rem;
+    font-size: 0.725rem;
   }
 }
