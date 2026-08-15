@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from '../components/layout/Header';
-import Sidebar from '../components/layout/Sidebar';
-import BottomNav from '../components/layout/BottomNav';
+import Header from '../components/common/Header';
+import Sidebar from '../components/common/Sidebar';
+import BottomNav from '../components/common/BottomNav';
 
 /**
  * BuyLayout Component

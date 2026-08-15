@@ -1,0 +1,58 @@
+/* ==========================================================================
+   SignupPage Specific Styles
+   ========================================================================== */
+.signup-card-wide {
+  max-width: 520px;
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.terms-checkbox-row {
+  display: flex;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox-container input {
+  accent-color: #16a34a;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.checkbox-text {
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+.green-text {
+  color: #16a34a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.green-text:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsiveness for Signup */
+@media (max-width: 960px) {
+  .form-row-2col {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+  .checkbox-text {
+    font-size: 0.725rem;
+  }
+}

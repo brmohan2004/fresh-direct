@@ -1,0 +1,101 @@
+/* ==========================================================================
+   FarmerCard (Farmer Spotlight) Component Styles
+   ========================================================================== */
+.farmer-spotlight-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111827;
+  color: #ffffff;
+  border-radius: clamp(0.75rem, 1.5vw, 1.25rem);
+  padding: clamp(1rem, 2.5vw, 1.75rem);
+  overflow: hidden;
+}
+
+.spotlight-content {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.4rem, 1vw, 0.75rem);
+}
+
+.spotlight-badge {
+  font-size: clamp(0.65rem, 0.85vw, 0.75rem);
+  font-weight: 700;
+  color: #4ade80;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.spotlight-title {
+  font-size: clamp(1.1rem, 1.6vw + 0.4rem, 1.65rem);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.spotlight-desc {
+  font-size: clamp(0.75rem, 0.95vw, 0.875rem);
+  color: #9ca3b8;
+  max-width: 480px;
+  line-height: 1.45;
+}
+
+.spotlight-stats {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0.25rem 0;
+}
+
+.spotlight-stats strong {
+  display: block;
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  color: #4ade80;
+}
+
+.spotlight-stats span {
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+.spotlight-btn {
+  background: #16a34a;
+  color: #ffffff;
+  padding: 0.5rem 1.15rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: clamp(0.75rem, 0.85vw, 0.85rem);
+  text-decoration: none;
+  width: fit-content;
+  transition: background 0.2s;
+}
+
+.spotlight-btn:hover {
+  background: #15803d;
+}
+
+.spotlight-image-box {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.spotlight-img {
+  max-width: 100%;
+  max-height: 240px;
+  border-radius: 1rem;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.1);
+}
+
+@media (max-width: 960px) {
+  .farmer-spotlight-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .spotlight-content {
+    align-items: center;
+  }
+  .spotlight-stats {
+    justify-content: center;
+  }
+}

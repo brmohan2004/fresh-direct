@@ -9,7 +9,6 @@ import BuyLayout from '../layouts/BuyLayout';
 import LoginPage from '../pages/auth/login/LoginPage';
 import SignupPage from '../pages/auth/signup/SignupPage';
 import ForgotPasswordPage from '../pages/auth/forgot-password/ForgotPasswordPage';
-import ModeSelectionPage from '../pages/auth/mode-selection/ModeSelectionPage';
 
 // Buy (Consumer) Pages
 import HomePage from '../pages/buy/home/HomePage';
@@ -47,8 +46,7 @@ export const router = createBrowserRouter([
     children: [
       { path: 'login', element: <LoginPage /> },
       { path: 'signup', element: <SignupPage /> },
-      { path: 'forgot-password', element: <ForgotPasswordPage /> },
-      { path: 'mode-selection', element: <ModeSelectionPage /> }
+      { path: 'forgot-password', element: <ForgotPasswordPage /> }
     ]
   },
   {

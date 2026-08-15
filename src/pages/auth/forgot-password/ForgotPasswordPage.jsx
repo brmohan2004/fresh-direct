@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Mail, ArrowRight, CheckCircle2, Leaf, Users, Truck, ArrowLeft } from 'lucide-react';
+import { Leaf, Users, Truck, ArrowLeft } from 'lucide-react';
 import heroImg from '../../../assets/image.png';
+import '../auth.css';
+import './ForgotPassword.css';
+
+import ForgotPasswordHeader from './components/ForgotPasswordHeader';
+import ForgotPasswordForm from './components/ForgotPasswordForm';
+import ResetSuccess from './components/ResetSuccess';
 
 /**
  * ForgotPasswordPage Component
- * Adheres to the established desktop & mobile responsive authentication design system:
- * - Desktop: Dual-pane view with farm illustration and value highlights on the left, clean recovery card on the right.
- * - Mobile: Top farm hero header banner, overlapping rounded white bottom sheet card, email input, OTP/reset dispatch CTA, & Return to Sign In link.
+ * Multi-device responsive authentication page using subcomponents.
  */
 export default function ForgotPasswordPage() {
   const navigate = useNavigate();
@@ -96,49 +100,18 @@ export default function ForgotPasswordPage() {
         <div className="auth-form-card">
           {!submitted ? (
             <>
-              <div className="auth-card-header">
-                <h2>Forgot Password?</h2>
-                <p>No worries! Enter your registered email address below to receive password recovery instructions.</p>
-              </div>
-
-              <form onSubmit={handleSubmit} className="reference-form">
-                <div className="form-field">
-                  <label>Email Address</label>
-                  <div className="input-box">
-                    <Mail size={18} className="field-icon" />
-                    <input
-                      type="email"
-                      placeholder="Enter your registered email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                    />
-                  </div>
-                </div>
-
-                <button type="submit" className="primary-submit-btn">
-                  <span>Send Reset Instructions</span>
-                  <ArrowRight size={18} />
-                </button>
-              </form>
+              <ForgotPasswordHeader />
+              <ForgotPasswordForm
+                email={email}
+                setEmail={setEmail}
+                handleSubmit={handleSubmit}
+              />
             </>
           ) : (
-            <div className="reset-success-box">
-              <div className="success-icon-circle">
-                <CheckCircle2 size={36} color="#16a34a" />
-              </div>
-              <h2>Check Your Email</h2>
-              <p>
-                We have sent password reset instructions to <strong>{email}</strong>.
-              </p>
-              <button
-                type="button"
-                className="primary-submit-btn"
-                onClick={() => navigate('/auth/login')}
-              >
-                Back to Sign In
-              </button>
-            </div>
+            <ResetSuccess
+              email={email}
+              onBackToSignIn={() => navigate('/auth/login')}
+            />
           )}
 
           <div className="bottom-redirect-row" style={{ marginTop: '0.5rem' }}>

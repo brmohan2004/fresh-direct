@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Sidebar Styles (Common Component)
+   ========================================================================== */
+.app-sidebar {
+  background: #ffffff;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.75rem;
+  transition: width 0.25s ease, transform 0.25s ease;
+  overflow-y: auto;
+  z-index: 30;
+}
+
+.sidebar-section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.5rem 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.5rem;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.sidebar-link:hover, .sidebar-link.active {
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+.sidebar-backdrop {
+  display: none;
+}
+
+/* Screen Size Specific Rules for Sidebar */
+
+/* TABLET & DESKTOP SCREENS (> 640px): Fixed / Sticky Sidebar */
+@media (min-width: 641px) {
+  .app-sidebar {
+    position: sticky;
+    top: clamp(68px, 4vw + 44px, 80px);
+    height: calc(100vh - clamp(68px, 4vw + 44px, 80px));
+    flex-shrink: 0;
+  }
+}
+
+/* 1. DESKTOP SCREENS (> 1024px): Side Nav Bar in OPEN State */
+@media (min-width: 1025px) {
+  .app-sidebar {
+    width: var(--sidebar-width-desktop);
+  }
+}
+
+/* 2. TABLET SCREENS (641px - 1024px): Side Nav Bar CLOSED / Collapsed by default (icon only), expandable via hamburger menu */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .app-sidebar {
+    width: var(--sidebar-width-collapsed);
+  }
+  .app-sidebar .nav-label,
+  .app-sidebar .sidebar-section-title {
+    display: none;
+  }
+  .app-sidebar.expanded {
+    position: fixed;
+    top: clamp(68px, 4vw + 44px, 80px);
+    bottom: 0;
+    left: 0;
+    width: var(--sidebar-width-desktop);
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+  }
+  .app-sidebar.expanded .nav-label,
+  .app-sidebar.expanded .sidebar-section-title {
+    display: block;
+  }
+  .sidebar-backdrop.active {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 25;
+  }
+}
+
+/* 3. MOBILE SCREENS (<= 640px): Sidebar hidden */
+@media (max-width: 640px) {
+  .app-sidebar {
+    display: none;
+  }
+}

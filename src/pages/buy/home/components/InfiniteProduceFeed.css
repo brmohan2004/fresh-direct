@@ -1,0 +1,103 @@
+/* ==========================================================================
+   InfiniteProduceFeed Component Styles
+   Infinite scrolling produce grid with dynamic Sentinel & Spinner
+   ========================================================================== */
+
+.infinite-feed-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.infinite-feed-section .section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.infinite-feed-section .section-title {
+  font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.feed-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: #16a34a;
+  margin-bottom: 0.1rem;
+}
+
+/* Responsive Product Grid */
+.infinite-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  gap: clamp(0.625rem, 1.2vw, 1rem);
+}
+
+.infinite-grid-item {
+  display: flex;
+}
+
+.infinite-grid-item > .product-card {
+  width: 100%;
+}
+
+/* Sentinel & Loader Container */
+.infinite-sentinel-box {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 0 1.25rem 0;
+  width: 100%;
+}
+
+.infinite-loader-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #16a34a;
+  font-size: 0.825rem;
+  font-weight: 700;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 0.5rem 1.1rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.08);
+}
+
+.infinite-spinner {
+  animation: spinSlow 0.75s linear infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.infinite-end-message {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #475569;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: #f8fafc;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+}
+
+@media (max-width: 640px) {
+  .infinite-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.625rem;
+  }
+}
