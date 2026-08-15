@@ -16,15 +16,20 @@ import SocialLogin from './components/SocialLogin';
 export default function LoginPage() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    rememberMe: false
+    email: 'abcd123@gmail.com',
+    password: 'abcd123',
+    rememberMe: true
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/buy/home');
+    if (formData.email && formData.password) {
+      navigate('/buy/home');
+    } else {
+      setErrorMsg('Please enter valid email and password.');
+    }
   };
 
   return (
@@ -110,6 +115,7 @@ export default function LoginPage() {
             showPassword={showPassword}
             setShowPassword={setShowPassword}
             handleSubmit={handleSubmit}
+            errorMsg={errorMsg}
           />
 
           <SocialLogin />

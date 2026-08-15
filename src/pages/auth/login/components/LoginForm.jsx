@@ -11,10 +11,26 @@ export default function LoginForm({
   setFormData,
   showPassword,
   setShowPassword,
-  handleSubmit
+  handleSubmit,
+  errorMsg
 }) {
   return (
     <form onSubmit={handleSubmit} className="reference-form">
+      {errorMsg && (
+        <div style={{
+          background: '#fef2f2',
+          border: '1px solid #fca5a5',
+          color: '#dc2626',
+          borderRadius: '0.6rem',
+          padding: '0.5rem 0.75rem',
+          fontSize: '0.8rem',
+          fontWeight: 600,
+          marginBottom: '1rem'
+        }}>
+          {errorMsg}
+        </div>
+      )}
+
       {/* Email Address */}
       <div className="form-field">
         <label>Email Address</label>
