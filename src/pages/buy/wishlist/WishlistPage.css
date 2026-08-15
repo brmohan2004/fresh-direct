@@ -1,0 +1,339 @@
+/* ==========================================================================
+   Wishlist Page Styles
+   Adaptive design maintaining exact font scale, design system tokens,
+   and layout specs from Home, Categories, & Cart pages.
+   ========================================================================== */
+
+.wishlist-page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-main, #f9fafb);
+  display: flex;
+  flex-direction: column;
+}
+
+.wishlist-page-container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 1.5rem 1.75rem 4rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Top Header */
+.wishlist-top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wishlist-title-group {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.wishlist-heading {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.wishlist-item-count {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Layout Grid */
+.wishlist-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.wishlist-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Favorites Green Banner */
+.favorites-banner {
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.favorites-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.heart-badge-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.15);
+}
+
+.favorites-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.fav-title {
+  font-size: 0.925rem;
+  font-weight: 800;
+  color: #166534;
+}
+
+.fav-desc {
+  font-size: 0.78rem;
+  color: #15803d;
+  margin-top: 0.1rem;
+}
+
+/* Filter Tabs & Sort Controls */
+.wishlist-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.category-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 0.1rem;
+}
+
+.category-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #4b5563;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.tab-btn.active {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.sort-box {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.sort-label {
+  font-size: 0.825rem;
+  color: #6b7280;
+}
+
+.sort-btn {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.6rem;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+/* Table Header (Desktop) */
+.wishlist-table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  padding: 0 1.25rem 0.25rem 1.25rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Items List */
+.wishlist-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+/* Bottom Action Row */
+.wishlist-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+}
+
+.footer-count {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.bottom-btns-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.clear-wishlist-btn {
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  padding: 0.4rem 0.65rem;
+  border-radius: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.clear-wishlist-btn:hover {
+  color: #ef4444;
+}
+
+.move-all-btn-green {
+  background: #2e7d32;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(46, 125, 50, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.move-all-btn-green:hover {
+  background: #1b5e20;
+}
+
+/* Empty Wishlist Card */
+.empty-wishlist-card {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 1.25rem;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.empty-wishlist-icon {
+  color: #16a34a;
+  margin-bottom: 0.5rem;
+}
+
+.empty-wishlist-card h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.empty-wishlist-card p {
+  color: #6b7280;
+  font-size: 0.925rem;
+  max-width: 400px;
+}
+
+.explore-btn {
+  margin-top: 1rem;
+  background: #16a34a;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.desktop-only {
+  display: flex;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .wishlist-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .wishlist-page-container {
+    padding: 1rem 1rem 6rem 1rem;
+    gap: 1rem;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .wishlist-bottom-row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .move-all-btn-green {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .footer-count {
+    font-size: 0.8rem;
+  }
+}

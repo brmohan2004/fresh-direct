@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Home, Grid, ShoppingBag, User, Search, ShoppingCart, Heart, HelpCircle, Settings } from 'lucide-react';
+import { Home, Grid, ShoppingBag, User, ShoppingCart, Heart, Package, HelpCircle, Settings } from 'lucide-react';
 import './Sidebar.css';
 
 /**
@@ -14,9 +14,9 @@ export default function Sidebar({ isOpen, onClose }) {
     { label: 'Categories', path: '/buy/categories', icon: Grid },
     { label: 'Products', path: '/buy/products', icon: ShoppingBag },
     { label: 'Farmers', path: '/buy/farmers', icon: User },
-    { label: 'Search', path: '/buy/search', icon: Search },
     { label: 'Cart', path: '/buy/cart', icon: ShoppingCart },
     { label: 'Wishlist', path: '/buy/wishlist', icon: Heart },
+    { label: 'My Orders', path: '/buy/orders', icon: Package },
   ];
 
   const secondaryNav = [

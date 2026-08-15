@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Categories Page Layout Styles
+   ========================================================================== */
+
+.cat-page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-main, #f9fafb);
+  display: flex;
+  flex-direction: column;
+}
+
+.cat-page-container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 1.25rem 1.75rem 3rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .cat-page-container {
+    padding: 0.75rem 1rem 5rem 1rem;
+    gap: 1rem;
+  }
+}
+
+/* Category Cards Grid Layout */
+.cat-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1100px) {
+  .cat-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 820px) {
+  .cat-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .cat-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+}
+
+/* Bottom Feature Badges Bar (Desktop) */
+.cat-features-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.feature-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f0fdf4;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.feature-desc {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+@media (max-width: 900px) {
+  .cat-features-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.desktop-only-flex {
+  display: flex;
+}
+
+@media (max-width: 640px) {
+  .desktop-only-flex {
+    display: none !important;
+  }
+}

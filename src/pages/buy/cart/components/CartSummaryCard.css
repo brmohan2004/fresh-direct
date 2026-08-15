@@ -1,0 +1,270 @@
+/* CartSummaryCard Styles */
+.cart-summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Free Delivery Banner */
+.free-delivery-banner {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+}
+
+.delivery-banner-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.truck-icon-badge {
+  font-size: 1.25rem;
+  background: #f0fdf4;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.delivery-banner-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.free-title {
+  font-size: 0.875rem;
+  color: #111827;
+}
+
+.free-desc {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.1rem;
+}
+
+.delivery-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #16a34a;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.progress-remaining-text {
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: #6b7280;
+  align-self: flex-end;
+}
+
+/* Coupon Box Trigger */
+.coupon-box-trigger {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+}
+
+.coupon-box-trigger:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.coupon-box-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.coupon-tag-icon {
+  color: #16a34a;
+}
+
+.coupon-text {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.coupon-arrow {
+  color: #9ca3af;
+}
+
+/* Order Summary Box */
+.summary-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+}
+
+.summary-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.summary-label {
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.info-icon {
+  color: #9ca3af;
+}
+
+.summary-value {
+  font-weight: 700;
+  color: #111827;
+}
+
+.delivery-value {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.strikethrough-price {
+  text-decoration: line-through;
+  color: #9ca3af;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.free-tag {
+  color: #16a34a;
+  font-weight: 800;
+}
+
+.summary-divider {
+  height: 1px;
+  background: #f1f5f9;
+  margin: 0.2rem 0;
+}
+
+.total-row {
+  font-size: 1.05rem;
+}
+
+.total-label {
+  font-weight: 800;
+  color: #111827;
+}
+
+.total-value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.safe-payments-pill {
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #15803d;
+  margin-top: 0.25rem;
+}
+
+.safe-icon {
+  color: #16a34a;
+}
+
+.proceed-checkout-btn {
+  width: 100%;
+  background: #2e7d32;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25);
+  margin-top: 0.35rem;
+}
+
+.proceed-checkout-btn:hover {
+  background: #1b5e20;
+}
+
+/* Trust Badges Footer */
+.cart-trust-badges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.trust-icon {
+  color: #16a34a;
+  margin-bottom: 0.1rem;
+}
+
+.trust-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+.trust-desc {
+  font-size: 0.68rem;
+  color: #9ca3af;
+}

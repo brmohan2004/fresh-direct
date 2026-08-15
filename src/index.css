@@ -16,14 +16,14 @@
   --sidebar-width-desktop: 200px;
   --sidebar-width-collapsed: 64px;
 
-  /* Reduced Fluid Responsive Typography Scale for Mobile */
-  --font-xs: clamp(0.625rem, 0.4vw + 0.55rem, 0.75rem);   /* 10px - 12px */
-  --font-sm: clamp(0.75rem, 0.5vw + 0.65rem, 0.875rem);   /* 12px - 14px */
-  --font-base: clamp(0.8125rem, 0.65vw + 0.7rem, 1rem);   /* 13px - 16px */
-  --font-lg: clamp(0.95rem, 0.8vw + 0.8rem, 1.2rem);     /* 15.2px - 19.2px */
-  --font-xl: clamp(1.1rem, 1.2vw + 0.9rem, 1.5rem);       /* 17.6px - 24px */
-  --font-2xl: clamp(1.3rem, 2vw + 0.95rem, 2.1rem);       /* 20.8px - 33.6px */
-  --font-3xl: clamp(1.5rem, 3vw + 1rem, 2.75rem);         /* 24px - 44px */
+  /* Reduced Fluid Responsive Typography Scale across All Pages */
+  --font-xs: clamp(0.625rem, 0.35vw + 0.55rem, 0.725rem); /* ~10px - 11.6px */
+  --font-sm: clamp(0.725rem, 0.45vw + 0.625rem, 0.825rem);/* ~11.6px - 13.2px */
+  --font-base: clamp(0.8rem, 0.55vw + 0.68rem, 0.925rem);  /* ~12.8px - 14.8px */
+  --font-lg: clamp(0.9rem, 0.7vw + 0.75rem, 1.1rem);       /* ~14.4px - 17.6px */
+  --font-xl: clamp(1.05rem, 1vw + 0.85rem, 1.35rem);       /* ~16.8px - 21.6px */
+  --font-2xl: clamp(1.25rem, 1.6vw + 0.9rem, 1.85rem);     /* ~20px - 29.6px */
+  --font-3xl: clamp(1.45rem, 2.5vw + 0.95rem, 2.35rem);    /* ~23.2px - 37.6px */
 
   /* Fluid Component & Asset Scale across Screen Sizes */
   --icon-size-sm: clamp(14px, 1.2vw + 10px, 18px);

@@ -1,0 +1,112 @@
+/* ==========================================================================
+   Order Details Main Layout Container Styles
+   ========================================================================== */
+
+.order-details-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-main, #f9fafb);
+  display: flex;
+  flex-direction: column;
+}
+
+.order-details-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem 1.75rem 4rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Desktop-only Inner Header Bar */
+.desktop-page-inner-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.desktop-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.desktop-back-btn {
+  background: transparent;
+  border: none;
+  color: #16a34a;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+  width: fit-content;
+}
+
+.desktop-back-btn:hover {
+  color: #15803d;
+  text-decoration: underline;
+}
+
+.desktop-page-title {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.desktop-support-btn {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.6rem;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.desktop-support-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+/* 2-Column Grid Layout */
+.details-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.details-left-col,
+.details-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .details-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .order-details-container {
+    padding: 1rem 1rem 6rem 1rem;
+    gap: 1rem;
+  }
+}

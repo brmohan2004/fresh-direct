@@ -1,0 +1,166 @@
+/* OrderSummarySidebar Styles */
+.orders-sidebar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.orders-stat-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+}
+
+.stat-card-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.stat-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.stat-label-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.stat-icon {
+  flex-shrink: 0;
+}
+
+.icon-gray { color: #6b7280; }
+.icon-orange { color: #d97706; }
+.icon-blue { color: #2563eb; }
+.icon-green { color: #16a34a; }
+.icon-red { color: #dc2626; }
+
+.stat-val {
+  font-weight: 800;
+}
+
+.val-orange { color: #d97706; }
+.val-blue { color: #2563eb; }
+.val-green { color: #16a34a; }
+.val-gray { color: #6b7280; }
+
+/* Help Card */
+.help-card {
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.help-card-left h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #166534;
+}
+
+.help-card-left p {
+  font-size: 0.78rem;
+  color: #15803d;
+  margin-top: 0.2rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.35;
+}
+
+.contact-support-btn {
+  background: #ffffff;
+  border: 1px solid #bbf7d0;
+  color: #16a34a;
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contact-support-btn:hover {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.headset-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.15);
+}
+
+/* Benefits Card */
+.benefits-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+}
+
+.benefits-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.benefit-icon {
+  color: #16a34a;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.benefit-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.b-title {
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.b-desc {
+  font-size: 0.725rem;
+  color: #6b7280;
+}

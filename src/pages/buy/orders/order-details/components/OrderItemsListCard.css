@@ -1,0 +1,97 @@
+/* Order Items List Card Styles */
+.order-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.order-item-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.order-item-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.item-img-box {
+  width: 58px;
+  height: 52px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem;
+  flex-shrink: 0;
+}
+
+.item-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.item-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+}
+
+.item-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.item-weight {
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.item-price-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+}
+
+.item-price {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.item-qty {
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.buy-again-btn {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #16a34a;
+  color: #16a34a;
+  border-radius: 0.65rem;
+  padding: 0.65rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.buy-again-btn:hover {
+  background: #16a34a;
+  color: #ffffff;
+}

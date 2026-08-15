@@ -1,0 +1,177 @@
+/* ==========================================================================
+   CategoryCard Component Styles
+   ========================================================================== */
+
+/* Base Category Card (Desktop Modern Glass-border Style) */
+.cat-card {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 1rem;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.6rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border-color: #d1fae5;
+}
+
+.cat-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.cat-icon-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cat-icon-badge svg {
+  width: 18px;
+  height: 18px;
+}
+
+.cat-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.cat-card-name {
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.25;
+}
+
+.cat-card-count {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.cat-card-tag {
+  display: inline-block;
+  background: #f0fdf4;
+  color: #16a34a;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.35rem;
+  margin-top: 0.25rem;
+  width: fit-content;
+}
+
+.cat-card-right {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cat-card-img-wrapper {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.15rem;
+}
+
+.cat-card-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.06));
+  transition: transform 0.25s ease;
+}
+
+.cat-card:hover .cat-card-img {
+  transform: scale(1.05);
+}
+
+.cat-card-arrow {
+  background: transparent;
+  border: none;
+  color: #16a34a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.arrow-desktop {
+  display: block;
+}
+
+.arrow-mobile {
+  display: none;
+}
+
+/* Mobile Horizontal Banner Cards Layout (<640px) */
+@media (max-width: 640px) {
+  .cat-card {
+    flex-direction: row;
+    align-items: center;
+    padding: 0.85rem 1rem;
+    border-radius: 1rem;
+    gap: 0.75rem;
+  }
+
+  .cat-card-left {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.85rem;
+    flex: 1;
+  }
+
+  .cat-icon-badge {
+    width: 44px;
+    height: 44px;
+  }
+
+  .cat-card-name {
+    font-size: 0.95rem;
+  }
+
+  .cat-card-count {
+    font-size: 0.75rem;
+  }
+
+  .cat-card-right {
+    width: auto;
+    gap: 0.5rem;
+  }
+
+  .cat-card-img-wrapper {
+    width: 100px;
+    height: 60px;
+    margin-top: 0;
+  }
+
+  .arrow-desktop {
+    display: none;
+  }
+
+  .arrow-mobile {
+    display: block;
+    color: #9ca3af;
+  }
+}

@@ -14,6 +14,7 @@ import BottomNav from '../components/common/BottomNav';
  */
 export default function BuyLayout() {
   const [sidebarExpanded, setSidebarExpanded] = useState(false);
+  const [categorySearchQuery, setCategorySearchQuery] = useState('');
 
   const toggleSidebar = () => {
     setSidebarExpanded((prev) => !prev);
@@ -22,7 +23,11 @@ export default function BuyLayout() {
   return (
     <div className="layout-root">
       {/* Separate Header */}
-      <Header onToggleSidebar={toggleSidebar} />
+      <Header
+        onToggleSidebar={toggleSidebar}
+        categorySearchQuery={categorySearchQuery}
+        onCategorySearchChange={setCategorySearchQuery}
+      />
 
       {/* Main Body Shell (Sidebar + Content) */}
       <div className="layout-body">
@@ -34,7 +39,7 @@ export default function BuyLayout() {
 
         {/* Content View */}
         <main className="layout-content">
-          <Outlet />
+          <Outlet context={{ categorySearchQuery, setCategorySearchQuery }} />
         </main>
       </div>
 

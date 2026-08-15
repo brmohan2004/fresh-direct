@@ -1,0 +1,251 @@
+/* ==========================================================================
+   Sleek & Minimalistic Order Tracking Stepper Styles
+   ========================================================================== */
+
+.stepper-card-sleek {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 1.15rem;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+}
+
+.stepper-card-sleek:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.05);
+}
+
+/* Top Meta Bar */
+.stepper-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stepper-order-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.order-id-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.6rem;
+}
+
+.chip-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+}
+
+.chip-val {
+  font-size: 0.925rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.copy-pill-btn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.3rem;
+  transition: color 0.2s ease;
+}
+
+.copy-pill-btn:hover {
+  color: #16a34a;
+}
+
+.order-time-sub {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.inline-clock {
+  color: #94a3b8;
+}
+
+/* Sleek Status Badge */
+.sleek-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #16a34a;
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.status-dot-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #16a34a;
+  box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(22, 163, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+  }
+}
+
+/* Minimal Stepper Track */
+.sleek-stepper-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 0.5rem;
+}
+
+.sleek-track-line {
+  position: absolute;
+  top: 18px;
+  left: 36px;
+  right: 36px;
+  height: 3px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.sleek-track-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  border-radius: 3px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sleek-steps-grid {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.sleek-step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  min-width: 90px;
+}
+
+.sleek-node-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px #ffffff;
+  transition: all 0.25s ease;
+}
+
+.sleek-step-item.is-completed .sleek-node-circle {
+  background: #16a34a;
+  border-color: #16a34a;
+  color: #ffffff;
+}
+
+.sleek-step-item.is-active .sleek-node-circle {
+  background: #15803d;
+  border-color: #15803d;
+  color: #ffffff;
+  box-shadow: 0 0 0 4px #ffffff, 0 4px 12px rgba(22, 163, 74, 0.35);
+}
+
+.sleek-step-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.sleek-step-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #475569;
+  transition: color 0.2s ease;
+}
+
+.sleek-step-item.is-completed .sleek-step-title,
+.sleek-step-item.is-active .sleek-step-title {
+  color: #0f172a;
+}
+
+.sleek-step-time {
+  font-size: 0.725rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Responsiveness */
+@media (max-width: 640px) {
+  .stepper-card-sleek {
+    padding: 1.2rem 1rem;
+    gap: 1.25rem;
+  }
+
+  .stepper-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .stepper-order-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .sleek-track-line {
+    left: 20px;
+    right: 20px;
+  }
+
+  .sleek-step-item {
+    min-width: auto;
+  }
+
+  .sleek-step-title {
+    font-size: 0.68rem;
+  }
+
+  .sleek-step-time {
+    font-size: 0.625rem;
+  }
+}
