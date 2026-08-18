@@ -27,9 +27,9 @@ export default function BottomNav({ cartCount = 5 }) {
 
   const items = [
     { label: 'Home', path: '/buy/home', icon: Home },
-    { label: 'Categories', path: '/buy/categories', icon: LayoutGrid },
+    { label: 'Category', path: '/buy/categories', icon: LayoutGrid },
     { label: 'Cart', path: '/buy/cart', icon: ShoppingCart, badge: cartCount },
-    { label: 'My Orders', path: '/buy/orders', icon: Package },
+    { label: 'Orders', path: '/buy/orders', icon: Package },
     { label: 'Wishlist', path: '/buy/wishlist', icon: Heart },
   ];
 
