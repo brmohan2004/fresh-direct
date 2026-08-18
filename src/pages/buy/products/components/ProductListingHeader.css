@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Product Listing Header Component Styles
+   ========================================================================== */
+
+.product-listing-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.header-controls-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.listing-search-input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  padding: 0.45rem 0.5rem 0.45rem 0.85rem;
+  flex: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.listing-search-input-box:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+.listing-search-input-box .search-icon {
+  color: #9ca3af;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.listing-search-input-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: var(--font-sm);
+  color: #111827;
+  width: 100%;
+}
+
+.search-inner-filter-btn {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+  width: 32px;
+  height: 32px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.search-inner-filter-btn:hover {
+  background: #16a34a;
+  border-color: #16a34a;
+  color: #ffffff;
+}
+
+.search-inner-filter-btn.search-active-mode {
+  background: #16a34a;
+  border-color: #16a34a;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3);
+  animation: pulseScale 0.2s ease-out;
+}
+
+.listing-sort-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.listing-sort-wrapper .sort-icon {
+  color: #6b7280;
+  margin-right: 0.4rem;
+}
+
+.listing-sort-wrapper select {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .header-controls-group {
+    width: 100%;
+  }
+
+  .listing-search-input-box {
+    flex: 1;
+  }
+
+  .listing-sort-wrapper {
+    display: none;
+  }
+}

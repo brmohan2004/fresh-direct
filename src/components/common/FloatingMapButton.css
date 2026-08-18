@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Floating Map Button Styles (Zepto/Blinkit Quick Action Pill Aesthetic)
+   - Left side: White circular icon badge
+   - Middle: Bold title ("View Farmers" / "Exit Map") + Subtitle
+   - Right side: Translucent dark circle with Chevron/Arrow icon
+   ========================================================================== */
+
+.floating-map-btn {
+  position: fixed;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #15803d;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  padding: 0.35rem 0.5rem 0.35rem 0.35rem;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(21, 128, 61, 0.38), 0 4px 12px rgba(0, 0, 0, 0.14);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.floating-map-btn:hover {
+  background: #166534;
+  box-shadow: 0 10px 28px rgba(21, 128, 61, 0.48), 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.map-btn-left-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #15803d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.map-btn-text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+  padding-right: 0.2rem;
+}
+
+.map-btn-main-title {
+  font-size: 0.925rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.map-btn-sub-title {
+  font-size: 0.725rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  margin-top: 0.05rem;
+}
+
+.map-btn-right-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.floating-map-btn:hover .map-btn-right-arrow {
+  background: rgba(0, 0, 0, 0.25);
+  transform: translateX(2px);
+}
+
+/* Exit Map Mode Specific Styles */
+.floating-map-btn.exit-mode {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.45), 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.floating-map-btn.exit-mode:hover {
+  background: #0f172a;
+}
+
+.floating-map-btn .exit-circle {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.floating-map-btn .exit-arrow {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* MOBILE SCREEN (<= 640px) */
+@media (max-width: 640px) {
+  .floating-map-btn {
+    bottom: 86px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .floating-map-btn.exit-mode {
+    bottom: 1.5rem;
+  }
+
+  .floating-map-btn:active {
+    transform: translateX(-50%) scale(0.94);
+  }
+
+  .floating-map-btn.hidden-on-scroll {
+    transform: translate(-50%, 120px);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* DESKTOP & TABLET SCREENS (> 640px) */
+@media (min-width: 641px) {
+  .floating-map-btn {
+    bottom: 2.25rem;
+    right: 2.25rem;
+    left: auto;
+    padding: 0.4rem 0.6rem 0.4rem 0.4rem;
+  }
+
+  .floating-map-btn:active {
+    transform: scale(0.95);
+  }
+
+  .floating-map-btn.hidden-on-scroll {
+    transform: translateY(120px);
+    opacity: 0;
+    pointer-events: none;
+  }
+}

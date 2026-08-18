@@ -63,6 +63,7 @@ export const router = createBrowserRouter([
       { path: 'cart', element: <CartPage /> },
       { path: 'checkout', element: <CheckoutPage /> },
       { path: 'payment', element: <PaymentPage /> },
+      { path: 'payment-confirm', element: <PaymentPage /> },
       { path: 'orders', element: <OrdersPage /> },
       { path: 'orders/order-details', element: <OrderDetailsPage /> },
       { path: 'orders/track-order', element: <TrackOrderPage /> },

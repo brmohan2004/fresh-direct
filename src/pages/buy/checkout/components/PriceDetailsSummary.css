@@ -1,0 +1,64 @@
+/* ==========================================================================
+   PriceDetailsSummary Component Styles
+   ========================================================================== */
+
+.price-details-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.price-breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #475569;
+}
+
+.info-help-icon {
+  color: #94a3b8;
+  vertical-align: middle;
+  margin-left: 0.2rem;
+}
+
+.price-row.discount-row {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.price-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 0.35rem 0;
+}
+
+.total-amount-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.security-footer-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #e2e8f0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #475569;
+}

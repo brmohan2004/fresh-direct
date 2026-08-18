@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Full-Bleed Category Small Cards Component Styles (Borderless & Flat)
+   ========================================================================== */
+
+.category-cards-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 0.25rem 0;
+}
+
+.cards-scroll-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding: 0.25rem;
+  scrollbar-width: none; /* Firefox */
+}
+
+.cards-scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.category-full-img-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 86px;
+  height: 86px;
+  border-radius: 0.95rem;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  padding: 0.45rem 0.35rem;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: none;
+  flex-shrink: 0;
+  background: #f8fafc;
+}
+
+.card-full-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.65) 100%);
+  transition: opacity 0.25s ease;
+}
+
+.category-full-img-card:hover {
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+.category-full-img-card:hover .card-full-bg-img {
+  transform: scale(1.08);
+}
+
+.category-full-img-card.active {
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+.category-full-img-card.active .card-gradient-overlay {
+  background: linear-gradient(180deg, rgba(22, 163, 74, 0.15) 20%, rgba(15, 23, 42, 0.75) 100%);
+}
+
+.card-count-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 2;
+  font-size: 0.625rem;
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  padding: 0.08rem 0.35rem;
+  border-radius: 9999px;
+  line-height: 1.2;
+}
+
+.category-full-img-card.active .card-count-badge {
+  background: #16a34a;
+}
+
+.category-card-label {
+  position: relative;
+  z-index: 2;
+  font-size: 0.725rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  white-space: nowrap;
+}
+
+.category-full-img-card.active .category-card-label {
+  color: #86efac;
+}
+
+@media (max-width: 640px) {
+  .category-full-img-card {
+    min-width: 80px;
+    height: 80px;
+    padding: 0.35rem 0.25rem;
+  }
+
+  .category-card-label {
+    font-size: 0.68rem;
+  }
+}

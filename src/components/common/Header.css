@@ -25,6 +25,13 @@
   backdrop-filter: blur(10px);
 }
 
+.checkout-minimal-header .header-top-row.checkout-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
+}
+
 .header-top-row {
   height: clamp(58px, 3.5vw + 36px, 68px);
   display: grid;
@@ -220,13 +227,14 @@
 }
 
 .location-value {
-  font-size: 0.825rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #1f2937;
-  max-width: 140px;
+  max-width: 160px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1;
 }
 
 .location-arrow {
@@ -390,15 +398,15 @@
 
 .header-search {
   width: 100%;
-  max-width: 480px;
-  min-height: 44px;
+  max-width: 650px;
+  min-height: 52px;
   position: relative;
   display: flex;
   align-items: center;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 9999px;
-  padding: 0.25rem 0.35rem 0.25rem 2.65rem;
+  padding: 0.35rem 0.45rem 0.35rem 2.85rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -410,17 +418,17 @@
 
 .header-search input {
   width: 100%;
-  padding: 0.4rem 0.4rem;
+  padding: 0.45rem 0.5rem;
   border: none;
   background: transparent;
-  font-size: 0.975rem;
+  font-size: 1.025rem;
   color: var(--text-main);
   outline: none;
 }
 
 .search-icon {
   position: absolute;
-  left: 0.875rem;
+  left: 1rem;
   color: #94a3b8;
   pointer-events: none;
 }
@@ -430,8 +438,8 @@
   color: #ffffff;
   border: none;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -447,6 +455,19 @@
 
 .header-filter-btn:active {
   transform: scale(0.95);
+}
+
+.header-filter-btn.search-active-btn {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.35);
+  animation: pulseScale 0.2s ease-out;
+}
+
+@keyframes pulseScale {
+  0% { transform: scale(0.85); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
 /* Right Section (Actions) */
@@ -478,6 +499,28 @@
 .header-support-pill-btn:hover {
   background: #f1f5f9;
   border-color: #cbd5e1;
+}
+
+.header-add-address-pill-btn {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 9999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(22, 163, 74, 0.12);
+}
+
+.header-add-address-pill-btn:hover {
+  background: #16a34a;
+  color: #ffffff;
+  border-color: #16a34a;
 }
 
 /* Profile Avatar Action Link */
@@ -579,10 +622,10 @@
 
 /* Mobile Search Row with Liquid Collapse */
 .mobile-header-search-row {
-  padding: 0 0.875rem 0.625rem 0.875rem;
+  padding: 0 0.875rem 0.75rem 0.875rem;
   width: 100%;
   transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, padding 0.25s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  max-height: 70px;
+  max-height: 80px;
   transform-origin: top center;
   overflow: hidden;
   will-change: max-height, opacity, transform;
@@ -599,7 +642,7 @@
 
 .mobile-header-search-row .header-search {
   max-width: 100%;
-  min-height: 40px;
+  min-height: 48px;
 }
 
 /* Visibility Helpers */
@@ -620,6 +663,11 @@
     justify-content: space-between;
     padding: 0 0.875rem;
     height: 58px;
+  }
+
+  .app-header.farmer-profile-header,
+  .app-header.product-details-header {
+    display: none !important;
   }
 
   .desktop-logo {
@@ -668,6 +716,31 @@
   .header-categories-title {
     display: none;
   }
+
+  .header-categories-title.show-always {
+    display: flex !important;
+  }
+}
+
+.header-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.header-back-btn:hover {
+  background: #f8fafc;
+  color: #16a34a;
+  border-color: #cbd5e1;
 }
 
 @media (min-width: 1025px) {

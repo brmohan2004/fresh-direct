@@ -100,7 +100,7 @@ export default function OrdersPage() {
   };
 
   const handleTrackOrder = (order) => {
-    alert(`Tracking Order #${order.orderNumber}... Status: ${order.status}`);
+    navigate('/buy/orders/track-order', { state: { order } });
   };
 
   return (
@@ -130,47 +130,13 @@ export default function OrdersPage() {
           </div>
         </div>
 
-        {/* Status Navigation Tabs */}
-        <div className="orders-tabs-bar">
-          <button
-            className={`tab-item ${activeTab === 'all' ? 'active' : ''}`}
-            onClick={() => setActiveTab('all')}
-          >
-            All Orders
-          </button>
-          <button
-            className={`tab-item ${activeTab === 'processing' ? 'active' : ''}`}
-            onClick={() => setActiveTab('processing')}
-          >
-            Processing
-          </button>
-          <button
-            className={`tab-item ${activeTab === 'shipped' ? 'active' : ''}`}
-            onClick={() => setActiveTab('shipped')}
-          >
-            Shipped
-          </button>
-          <button
-            className={`tab-item ${activeTab === 'delivered' ? 'active' : ''}`}
-            onClick={() => setActiveTab('delivered')}
-          >
-            Delivered
-          </button>
-          <button
-            className={`tab-item ${activeTab === 'cancelled' ? 'active' : ''}`}
-            onClick={() => setActiveTab('cancelled')}
-          >
-            Cancelled
-          </button>
-        </div>
-
         {/* Main 2-Column Desktop Grid Layout */}
         <div className="orders-layout-grid">
           
-          {/* Left Column: Orders List */}
+          {/* Left Column: Banner, Filter Pills & Orders List */}
           <div className="orders-left-col">
             
-            {/* Fresh Trust Delivery Banner */}
+            {/* Fresh Trust Delivery Banner (Moved Above Pills) */}
             <div className="trust-delivery-banner">
               <div className="trust-banner-left">
                 <div className="bag-badge-icon">
@@ -187,6 +153,40 @@ export default function OrdersPage() {
                   <Truck size={36} color="#16a34a" />
                 </div>
               </div>
+            </div>
+
+            {/* Status Navigation Pills */}
+            <div className="orders-tabs-bar">
+              <button
+                className={`tab-item ${activeTab === 'all' ? 'active' : ''}`}
+                onClick={() => setActiveTab('all')}
+              >
+                All Orders ({counts.all})
+              </button>
+              <button
+                className={`tab-item ${activeTab === 'processing' ? 'active' : ''}`}
+                onClick={() => setActiveTab('processing')}
+              >
+                Processing ({counts.processing})
+              </button>
+              <button
+                className={`tab-item ${activeTab === 'shipped' ? 'active' : ''}`}
+                onClick={() => setActiveTab('shipped')}
+              >
+                Shipped ({counts.shipped})
+              </button>
+              <button
+                className={`tab-item ${activeTab === 'delivered' ? 'active' : ''}`}
+                onClick={() => setActiveTab('delivered')}
+              >
+                Delivered ({counts.delivered})
+              </button>
+              <button
+                className={`tab-item ${activeTab === 'cancelled' ? 'active' : ''}`}
+                onClick={() => setActiveTab('cancelled')}
+              >
+                Cancelled ({counts.cancelled})
+              </button>
             </div>
 
             {/* Orders Cards List */}

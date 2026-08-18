@@ -1,20 +1,29 @@
 import React from 'react';
+import LiveMapCard from './components/LiveMapCard';
+import DeliveryHeroCard from './components/DeliveryHeroCard';
+import TrackingStepper from './components/TrackingStepper';
+import TrackOrderItemsSummary from './components/TrackOrderItemsSummary';
 
-/**
- * TrackOrderPage
- * Route: /buy/orders/track-order
- * 
- * [PLACEHOLDER] Page skeleton ready for UI implementation.
- * Page-specific sub-components should be placed in components/ directory under this page folder.
- */
+import './TrackOrderPage.css';
+
 export default function TrackOrderPage() {
   return (
-    <div className="page-container">
-      <div className="page-skeleton-card">
-        <h2>TrackOrderPage</h2>
-        <p style={{ color: 'var(--text-muted)', marginTop: '0.5rem' }}>
-          Route: <code>/buy/orders/track-order</code> - Ready for UI implementation.
-        </p>
+    <div className="track-order-page-wrapper">
+      <div className="page-container track-order-container">
+        {/* Responsive Grid Layout */}
+        <div className="track-order-layout-grid">
+          {/* Main Column: Live Map & Delivery Hero Info */}
+          <div className="track-column-left">
+            <LiveMapCard />
+            <DeliveryHeroCard />
+          </div>
+
+          {/* Side Column: Order Stepper & Items Summary */}
+          <div className="track-column-right">
+            <TrackingStepper />
+            <TrackOrderItemsSummary />
+          </div>
+        </div>
       </div>
     </div>
   );

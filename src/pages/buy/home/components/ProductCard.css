@@ -47,7 +47,7 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.fav-btn {
+.product-card .fav-btn {
   position: absolute;
   top: 0.35rem;
   right: 0.35rem;
@@ -64,7 +64,7 @@
   transition: background 0.2s, transform 0.1s;
 }
 
-.fav-btn:hover {
+.product-card .fav-btn:hover {
   background: #f9fafb;
   transform: scale(1.05);
 }

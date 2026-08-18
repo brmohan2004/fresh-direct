@@ -1,0 +1,55 @@
+/* ==========================================================================
+   FarmerMobileBottomBar Component Styles
+   ========================================================================== */
+
+.mobile-farmer-bottom-bar {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .mobile-farmer-bottom-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid var(--border);
+    padding: 0.75rem 1rem;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+    z-index: 50;
+  }
+
+  .mobile-bottom-btn {
+    flex: 1;
+    height: 44px;
+    border-radius: 0.65rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+  }
+
+  .mobile-bottom-btn:active {
+    transform: scale(0.97);
+  }
+
+  .mobile-bottom-btn.btn-secondary {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    color: #374151;
+  }
+
+  .mobile-bottom-btn.btn-primary {
+    background: var(--primary);
+    border: none;
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(22, 163, 74, 0.25);
+  }
+}

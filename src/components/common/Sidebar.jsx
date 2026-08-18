@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Home, Grid, ShoppingBag, User, ShoppingCart, Heart, Package, HelpCircle, Settings } from 'lucide-react';
 import './Sidebar.css';
 
@@ -9,6 +9,13 @@ import './Sidebar.css';
  * - Tablet: Collapsed by default (icon-only or overlay toggled via hamburger)
  */
 export default function Sidebar({ isOpen, onClose }) {
+  const location = useLocation();
+  if (
+    location.pathname.includes('/buy/checkout') ||
+    location.pathname.includes('/buy/payment')
+  ) {
+    return null;
+  }
   const mainNav = [
     { label: 'Home', path: '/buy/home', icon: Home },
     { label: 'Categories', path: '/buy/categories', icon: Grid },

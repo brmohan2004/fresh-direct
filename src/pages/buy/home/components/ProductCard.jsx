@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Star, Heart, Plus, Minus } from 'lucide-react';
 import './ProductCard.css';
 
@@ -10,15 +10,35 @@ export default function ProductCard({
   onQuantityChange,
   onToggleFavorite
 }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = (e) => {
+    navigate('/buy/product-details');
+  };
+
+  const handleFavClick = (e) => {
+    e.stopPropagation();
+    if (onToggleFavorite) {
+      onToggleFavorite(product.id);
+    }
+  };
+
+  const handleQtyClick = (e, delta) => {
+    e.stopPropagation();
+    if (onQuantityChange) {
+      onQuantityChange(product.id, delta);
+    }
+  };
+
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={handleCardClick} style={{ cursor: 'pointer' }}>
       {/* Image Container */}
       <div className="prod-img-container">
         {product.tag && <span className="prod-tag">{product.tag}</span>}
         <button
           type="button"
           className={`fav-btn ${isFavorite ? 'active' : ''}`}
-          onClick={() => onToggleFavorite(product.id)}
+          onClick={handleFavClick}
           aria-label="Add to Wishlist"
         >
           <Heart
@@ -27,9 +47,7 @@ export default function ProductCard({
             color={isFavorite ? '#ef4444' : '#6b7280'}
           />
         </button>
-        <Link to={`/buy/product/${product.id}`}>
-          <img src={product.image} alt={product.name} className="prod-img" />
-        </Link>
+        <img src={product.image} alt={product.name} className="prod-img" />
       </div>
 
       {/* Product Meta & Information */}
@@ -41,9 +59,9 @@ export default function ProductCard({
           </span>
         </div>
 
-        <Link to={`/buy/product/${product.id}`} className="prod-title">
+        <span className="prod-title">
           {product.name}
-        </Link>
+        </span>
         <span className="prod-unit">{product.unit} • {product.harvestTime}</span>
 
         {/* Price & Add to Cart Bar */}
@@ -57,17 +75,17 @@ export default function ProductCard({
             <button
               type="button"
               className="add-cart-btn"
-              onClick={() => onQuantityChange(product.id, 1)}
+              onClick={(e) => handleQtyClick(e, 1)}
             >
               <Plus size={16} /> Add
             </button>
           ) : (
-            <div className="qty-control">
-              <button type="button" onClick={() => onQuantityChange(product.id, -1)}>
+            <div className="qty-control" onClick={(e) => e.stopPropagation()}>
+              <button type="button" onClick={(e) => handleQtyClick(e, -1)}>
                 <Minus size={14} />
               </button>
               <span>{quantity}</span>
-              <button type="button" onClick={() => onQuantityChange(product.id, 1)}>
+              <button type="button" onClick={(e) => handleQtyClick(e, 1)}>
                 <Plus size={14} />
               </button>
             </div>

@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Track Order Page Styles
+   ========================================================================== */
+
+.track-order-page-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg-main, #f8fafc);
+  padding-bottom: 2.5rem;
+}
+
+.track-order-container {
+  padding-top: 1.25rem;
+}
+
+/* Layout Grid */
+.track-order-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 992px) {
+  .track-order-layout-grid {
+    grid-template-columns: 1.15fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+}
+
+.track-column-left,
+.track-column-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .track-order-page-wrapper {
+    padding-top: 0;
+    padding-bottom: 1.5rem;
+  }
+
+  .track-order-container {
+    padding-top: 0.85rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+}

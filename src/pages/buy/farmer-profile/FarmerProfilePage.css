@@ -1,0 +1,270 @@
+/* ==========================================================================
+   Farmer Profile Main Page Layout Styles
+   ========================================================================== */
+
+.farmer-profile-container {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  position: relative;
+  padding-bottom: clamp(5rem, 8vw, 2rem);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Toast Notification */
+.share-toast {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111827;
+  color: #ffffff;
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  animation: fadeInDownToast 0.3s ease-out;
+}
+
+@keyframes fadeInDownToast {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -15px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Profile Content Wrapper */
+.farmer-profile-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(0.75rem, 3vw, 1.25rem);
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+/* Page Content Grid (Main + Sidebar) */
+.farmer-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.farmer-main-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Section Card Base */
+.profile-section-card {
+  background: #ffffff;
+  border-radius: clamp(0.75rem, 1.2vw, 1rem);
+  border: 1px solid var(--border);
+  padding: clamp(1.1rem, 2vw, 1.5rem);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.section-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.title-with-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.header-rating-badge {
+  background: #fffbeb;
+  border: 1px solid #fef3c7;
+  color: #b45309;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.view-all-link {
+  background: none;
+  border: none;
+  color: #16a34a;
+  font-size: 0.825rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.view-all-link:hover {
+  color: #15803d;
+  text-decoration: underline;
+}
+
+/* Video Player Modal */
+.video-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  animation: fadeInModal 0.25s ease-out;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.video-modal-container {
+  width: 100%;
+  max-width: 680px;
+  background: #000000;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+
+.close-modal-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.video-player-box {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  background: #111827;
+  overflow: hidden;
+}
+
+.modal-video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.modal-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem;
+  background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+}
+
+.modal-play-icon {
+  background: rgba(22, 163, 74, 0.9);
+  border-radius: 50%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 20px rgba(22, 163, 74, 0.4);
+}
+
+.modal-video-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.modal-video-sub {
+  font-size: 0.85rem;
+  color: #d1d5db;
+}
+
+/* Responsive Grid Breakpoints */
+@media (max-width: 640px) {
+  .farmer-profile-container {
+    padding-bottom: 80px;
+  }
+
+  .farmer-content-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .farmer-profile-wrapper {
+    padding: 0 0.75rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .profile-section-card {
+    padding: 0.85rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .desktop-only-inline {
+    display: none !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .farmer-content-grid {
+    grid-template-columns: 1fr 280px;
+  }
+}

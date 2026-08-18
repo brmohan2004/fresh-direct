@@ -1,0 +1,76 @@
+/* ==========================================================================
+   CheckoutProgressStepper Component Styles
+   ========================================================================== */
+
+.checkout-stepper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 540px;
+  margin: 0 auto 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.stepper-line {
+  position: absolute;
+  top: 16px;
+  left: 2.5rem;
+  right: 2.5rem;
+  height: 2px;
+  background: #e2e8f0;
+  z-index: 1;
+}
+
+.stepper-step-item {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  color: #64748b;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.step-label {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.stepper-step-item.completed .step-circle {
+  background: #16a34a;
+  border-color: #16a34a;
+  color: #ffffff;
+}
+
+.stepper-step-item.completed .step-label {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.stepper-step-item.active .step-circle {
+  border-color: #16a34a;
+  color: #16a34a;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.15);
+}
+
+.stepper-step-item.active .step-label {
+  color: #0f172a;
+  font-weight: 800;
+}

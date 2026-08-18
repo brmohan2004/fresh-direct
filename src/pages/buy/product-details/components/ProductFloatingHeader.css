@@ -1,0 +1,51 @@
+/* Mobile-only Floating Header Buttons overlay */
+.product-mobile-floating-header {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .product-mobile-floating-header {
+    position: fixed;
+    top: 12px;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    pointer-events: none;
+  }
+
+  .product-float-btn {
+    pointer-events: auto;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(229, 231, 235, 0.8);
+    color: #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .product-float-btn:active {
+    transform: scale(0.92);
+  }
+
+  .product-float-btn.fav-btn.active {
+    background: #fef2f2;
+    border-color: #fca5a5;
+  }
+
+  .product-float-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}

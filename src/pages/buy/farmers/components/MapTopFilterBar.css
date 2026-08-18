@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Map Top Filter Bar Component Styles
+   - Prominent floating search bar with increased height & typography
+   ========================================================================== */
+
+.map-top-overlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.map-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  padding: 0.85rem 1.35rem;
+  min-height: 52px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+}
+
+.map-search-bar:focus-within {
+  border-color: #16a34a;
+  box-shadow: 0 12px 32px rgba(22, 163, 74, 0.22), 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+.map-search-icon {
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+.map-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 1rem;
+  color: #0f172a;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.map-search-input::placeholder {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.clear-search-btn {
+  background: #f1f5f9;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.clear-search-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Filter Row Chips */
+.map-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.1rem 0.2rem;
+  scrollbar-width: none;
+}
+
+.map-filter-row::-webkit-scrollbar {
+  display: none;
+}
+
+.map-filter-chip {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  padding: 0.45rem 0.95rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #475569;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.map-filter-chip:hover {
+  border-color: #bbf7d0;
+  color: #16a34a;
+}
+
+.map-filter-chip.active {
+  background: #16a34a;
+  color: #ffffff;
+  border-color: #16a34a;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
+}

@@ -362,3 +362,81 @@
     font-size: 0.8rem;
   }
 }
+
+/* Floating Move All to Cart Bar above Bottom Nav */
+.wishlist-floating-bar-wrapper {
+  position: relative;
+}
+
+.wishlist-mobile-floating-bar {
+  position: fixed;
+  bottom: 86px; /* Floating with clearance above 64px bottom nav bar */
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 1.75rem);
+  max-width: 540px;
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid #e2e8f0;
+  border-radius: 1.15rem;
+  padding: 0.75rem 1.15rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
+.wishlist-floating-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.wishlist-floating-label {
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: #15803d;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.wishlist-floating-count {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.1;
+}
+
+.wishlist-floating-move-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.85rem;
+  padding: 0.75rem 1.35rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
+  transition: all 0.2s ease;
+}
+
+.wishlist-floating-move-btn:hover {
+  background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+  box-shadow: 0 6px 18px rgba(22, 163, 74, 0.4);
+}
+
+.wishlist-floating-move-btn:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 640px) {
+  .wishlist-mobile-floating-bar {
+    bottom: 86px;
+    width: calc(100% - 1.5rem);
+  }
+}

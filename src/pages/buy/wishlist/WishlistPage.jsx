@@ -23,7 +23,7 @@ const initialWishlistItems = [
     category: 'fruits',
     price: 150,
     unit: 'kg',
-    image: prodTomatoes, // clean red fruit mockup
+    image: prodTomatoes,
     badge: 'Fresh',
     addedDate: 'May 12, 2026'
   },
@@ -34,7 +34,7 @@ const initialWishlistItems = [
     category: 'vegetables',
     price: 80,
     unit: 'kg',
-    image: prodSpinach, // green produce mockup
+    image: prodSpinach,
     badge: 'Fresh',
     addedDate: 'May 13, 2026'
   },
@@ -45,7 +45,7 @@ const initialWishlistItems = [
     category: 'fruits',
     price: 60,
     unit: 'kg',
-    image: prodPotatoes, // yellow produce mockup
+    image: prodPotatoes,
     badge: 'Fresh',
     addedDate: 'May 15, 2026'
   },
@@ -56,7 +56,7 @@ const initialWishlistItems = [
     category: 'others',
     price: 650,
     unit: '250g',
-    image: prodOnions, // dry fruit produce mockup
+    image: prodOnions,
     badge: 'Premium',
     addedDate: 'May 18, 2026'
   },
@@ -243,16 +243,10 @@ export default function WishlistPage() {
               {/* Bottom Action Row */}
               <div className="wishlist-bottom-row">
                 <span className="footer-count">{items.length} items in wishlist</span>
-                <div className="bottom-btns-group">
-                  <button className="clear-wishlist-btn desktop-only" onClick={handleClearWishlist}>
-                    <Trash2 size={15} />
-                    <span>Clear Wishlist</span>
-                  </button>
-                  <button className="move-all-btn-green" onClick={handleMoveAllToCart}>
-                    <ShoppingBag size={16} />
-                    <span>Move All to Cart</span>
-                  </button>
-                </div>
+                <button className="clear-wishlist-btn" onClick={handleClearWishlist}>
+                  <Trash2 size={15} />
+                  <span>Clear Wishlist</span>
+                </button>
               </div>
 
             </div>
@@ -270,6 +264,23 @@ export default function WishlistPage() {
         )}
 
       </div>
+
+      {/* Floating Action Bar above Bottom Navigation */}
+      {items.length > 0 && (
+        <div className="wishlist-floating-bar-wrapper">
+          <div className="wishlist-mobile-floating-bar">
+            <div className="wishlist-floating-info">
+              <span className="wishlist-floating-label">My Wishlist</span>
+              <span className="wishlist-floating-count">{items.length} Saved Items</span>
+            </div>
+            <button className="wishlist-floating-move-btn" onClick={handleMoveAllToCart}>
+              <ShoppingBag size={18} />
+              <span>Move All to Cart</span>
+              <ArrowRight size={18} />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

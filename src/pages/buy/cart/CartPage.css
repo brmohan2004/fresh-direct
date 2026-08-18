@@ -1,6 +1,7 @@
 /* ==========================================================================
    Cart Page Styles
-   Adaptive design matching pixel-perfect uploaded desktop & mobile references
+   - Clean single column cart layout
+   - Floating Checkout Bar with Total Amount Clickable Dropdown & Order Summary Sheet
    ========================================================================== */
 
 .cart-page-wrapper {
@@ -9,11 +10,12 @@
   background-color: var(--bg-main, #f9fafb);
   display: flex;
   flex-direction: column;
+  padding-bottom: 110px;
 }
 
 .cart-page-container {
   width: 100%;
-  max-width: 1320px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 1.5rem 1.75rem 4rem 1.75rem;
   display: flex;
@@ -66,19 +68,12 @@
   background-color: #fef2f2;
 }
 
-/* Two Column Layout Grid */
-.cart-layout-grid {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 2rem;
-  align-items: start;
-}
-
-/* Left Column */
-.cart-left-col {
+/* Single Column Cart Layout */
+.cart-layout-single-col {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  width: 100%;
 }
 
 /* Farmer Support Banner */
@@ -327,29 +322,350 @@
   display: flex;
 }
 
-/* Media Queries for Tablet & Mobile */
-@media (max-width: 1100px) {
-  .cart-layout-grid {
-    grid-template-columns: 1fr 340px;
-    gap: 1.25rem;
-  }
+/* Floating Checkout Bar with Total Amount Clickable Dropdown */
+.cart-floating-bar-wrapper {
+  position: relative;
+}
 
-  .recommended-grid {
-    grid-template-columns: repeat(2, 1fr);
+.cart-mobile-floating-bar {
+  position: fixed;
+  bottom: 86px; /* Floating with generous spacing above 64px bottom nav bar */
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 1.75rem);
+  max-width: 540px;
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid #e2e8f0;
+  border-radius: 1.15rem;
+  padding: 0.75rem 1.15rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
+.clickable-dropdown {
+  cursor: pointer;
+  user-select: none;
+  padding: 0.2rem 0.5rem;
+  margin-left: -0.5rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.clickable-dropdown:hover {
+  background: #f1f5f9;
+}
+
+.mobile-bar-price-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.mobile-bar-total-label {
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: #15803d;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.dropdown-arrow-icon {
+  color: #16a34a;
+  transition: transform 0.2s ease;
+}
+
+.mobile-bar-total-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.1;
+}
+
+.mobile-bar-checkout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.85rem;
+  padding: 0.75rem 1.35rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
+  transition: all 0.2s ease;
+}
+
+.mobile-bar-checkout-btn:hover {
+  background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+  box-shadow: 0 6px 18px rgba(22, 163, 74, 0.4);
+}
+
+.mobile-bar-checkout-btn:active {
+  transform: scale(0.97);
+}
+
+/* Order Summary Slide-Up Sheet Modal */
+.order-summary-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 550;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeInOverlay 0.25s ease;
+}
+
+.order-summary-modal-card {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 1.5rem 1.5rem 0 0;
+  padding: 1.25rem;
+  box-shadow: 0 -10px 32px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: slideUpSheet 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+.summary-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.summary-modal-header h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.summary-close-btn {
+  background: #f1f5f9;
+  border: none;
+  color: #64748b;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.summary-close-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Free Delivery Banner inside modal */
+.free-delivery-banner {
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  border-radius: 0.85rem;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.delivery-banner-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.truck-icon-badge {
+  font-size: 1.2rem;
+}
+
+.delivery-banner-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.free-title {
+  font-size: 0.85rem;
+  color: #166534;
+}
+
+.free-desc {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0.1rem 0 0 0;
+}
+
+.delivery-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #16a34a;
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+/* Coupon Box Trigger */
+.coupon-box-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.coupon-box-trigger:hover {
+  border-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.coupon-box-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.coupon-tag-icon {
+  color: #16a34a;
+}
+
+.coupon-text {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.coupon-arrow {
+  color: #94a3b8;
+}
+
+/* Price Breakdown Rows */
+.summary-rows-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #475569;
+}
+
+.info-icon {
+  color: #94a3b8;
+  vertical-align: middle;
+}
+
+.strikethrough-price {
+  text-decoration: line-through;
+  color: #94a3b8;
+  margin-right: 0.35rem;
+}
+
+.free-tag {
+  color: #16a34a;
+  font-weight: 800;
+}
+
+.summary-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 0.2rem 0;
+}
+
+.total-row {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.safe-payments-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: #f8fafc;
+  padding: 0.5rem;
+  border-radius: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.safe-icon {
+  color: #16a34a;
+}
+
+.modal-proceed-checkout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.85rem;
+  padding: 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-@media (max-width: 820px) {
-  .cart-layout-grid {
-    grid-template-columns: 1fr;
+@keyframes slideUpSheet {
+  from {
+    transform: translateY(100%);
   }
-
-  .cart-right-col {
-    order: 2;
+  to {
+    transform: translateY(0);
   }
+}
 
-  .cart-left-col {
-    order: 1;
+/* Responsive Media Queries */
+@media (max-width: 1100px) {
+  .recommended-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -375,5 +691,10 @@
   .add-more-btn {
     font-size: 0.78rem;
     white-space: nowrap;
+  }
+
+  .cart-mobile-floating-bar {
+    bottom: 86px;
+    width: calc(100% - 1.5rem);
   }
 }

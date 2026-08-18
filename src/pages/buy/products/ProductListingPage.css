@@ -1,0 +1,308 @@
+/* ==========================================================================
+   Product Listing Page Main Styles
+   ========================================================================== */
+
+.product-listing-page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg-main);
+  position: relative;
+}
+
+.listing-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-bottom: 5.5rem;
+}
+
+/* Two-Column Main Layout */
+.listing-main-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.listing-products-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Responsive Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+}
+
+/* Empty Filter State */
+.empty-listing-state {
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 1rem;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.empty-listing-state h3 {
+  font-size: var(--font-lg);
+  font-weight: 800;
+  color: #111827;
+}
+
+.empty-listing-state p {
+  font-size: var(--font-sm);
+  color: #6b7280;
+}
+
+.reset-empty-btn {
+  background: var(--primary);
+  border: none;
+  color: #ffffff;
+  font-size: var(--font-sm);
+  font-weight: 700;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.65rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.reset-empty-btn:hover {
+  background: var(--primary-hover);
+}
+
+/* ==========================================================================
+   "For You" Recommended Products Section (Conditions 1, 2, 3)
+   ========================================================================== */
+.for-you-section {
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+  border: 1.5px solid #bbf7d0;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 4px 20px rgba(22, 163, 74, 0.06);
+}
+
+.for-you-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.for-you-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sparkle-icon {
+  color: #eab308;
+  fill: #fef08a;
+}
+
+.for-you-title-group h3 {
+  font-size: var(--font-lg);
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.01em;
+}
+
+.for-you-subdesc {
+  font-size: var(--font-xs);
+  color: #6b7280;
+  margin-top: 0.1rem;
+}
+
+.for-you-grid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+}
+
+/* ==========================================================================
+   Floating Bottom View Cart Bar (Listing Page)
+   ========================================================================== */
+.listing-floating-cart-bar {
+  position: fixed;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  z-index: 45;
+  padding: 0 1.75rem;
+  transition: left 0.25s ease;
+  animation: slideUpFloat 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideUpFloat {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1025px) {
+  .listing-floating-cart-bar {
+    left: var(--sidebar-width-desktop);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .listing-floating-cart-bar {
+    left: var(--sidebar-width-collapsed);
+  }
+}
+
+.cart-floating-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+  color: #ffffff;
+  border-radius: 1rem;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 24px rgba(22, 128, 61, 0.35);
+}
+
+.cart-floating-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.floating-bag-badge {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.floating-bag-badge .badge-count {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: #16a34a;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #ffffff;
+}
+
+.floating-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.floating-item-title {
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.floating-total-price {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #dcfce7;
+}
+
+.floating-view-cart-btn {
+  background: #ffffff;
+  border: none;
+  color: #15803d;
+  font-size: var(--font-sm);
+  font-weight: 800;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.floating-view-cart-btn:hover {
+  background: #f0fdf4;
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .for-you-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .listing-main-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .listing-container {
+    padding-bottom: 5.5rem;
+    gap: 0.85rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+  }
+
+  .for-you-section {
+    padding: 1rem;
+    gap: 0.85rem;
+    border-radius: 1rem;
+  }
+
+  .for-you-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+  }
+
+  .listing-floating-cart-bar {
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    padding: 0;
+  }
+
+  .cart-floating-inner {
+    border-radius: 1rem;
+    padding: 0.6rem 0.85rem;
+  }
+}

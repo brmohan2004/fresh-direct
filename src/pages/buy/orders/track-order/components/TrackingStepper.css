@@ -1,0 +1,171 @@
+/* ==========================================================================
+   Tracking Stepper Component Styles
+   ========================================================================== */
+
+.tracking-stepper-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  padding: 1.15rem 1.25rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+}
+
+.stepper-header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 1rem;
+}
+
+.stepper-header-title .clock-icon {
+  color: #16a34a;
+}
+
+.stepper-header-title h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.stepper-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.timeline-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  position: relative;
+}
+
+.step-indicator-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.step-node-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.25s ease;
+}
+
+.timeline-step-item.completed .step-node-badge {
+  background: #f0fdf4;
+  border: 2px solid #16a34a;
+  color: #16a34a;
+}
+
+.timeline-step-item.active .step-node-badge {
+  background: #16a34a;
+  border: 2px solid #16a34a;
+  color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.2);
+  animation: pulseBadge 2s infinite;
+}
+
+@keyframes pulseBadge {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(22, 163, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+  }
+}
+
+.timeline-step-item.pending .step-node-badge {
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  color: #94a3b8;
+}
+
+.step-connector-line {
+  width: 2px;
+  height: 48px;
+  background: #e2e8f0;
+  margin: 0.2rem 0;
+}
+
+.step-connector-line.line-completed {
+  background: #16a34a;
+}
+
+.step-info-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-bottom: 0.85rem;
+  flex: 1;
+}
+
+.step-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.step-title-text {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+}
+
+.timeline-step-item.active .step-title-text {
+  color: #16a34a;
+}
+
+.timeline-step-item.pending .step-title-text {
+  color: #64748b;
+}
+
+.step-time-text {
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.step-desc-text {
+  font-size: 0.775rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.live-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+  font-size: 0.725rem;
+  font-weight: 700;
+  padding: 0.25rem 0.55rem;
+  border-radius: 0.45rem;
+  margin-top: 0.35rem;
+  width: fit-content;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #16a34a;
+  animation: pulseDot 1.5s infinite;
+}

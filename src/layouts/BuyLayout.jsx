@@ -3,14 +3,16 @@ import { Outlet } from 'react-router-dom';
 import Header from '../components/common/Header';
 import Sidebar from '../components/common/Sidebar';
 import BottomNav from '../components/common/BottomNav';
+import FloatingMapButton from '../components/common/FloatingMapButton';
 
 /**
  * BuyLayout Component
  * Multi-device Layout System:
  * - Separate Header component
  * - Desktop (> 1024px): Side Navigation Bar in OPEN state
- * - Tablet (641px - 1024px): Side Navigation Bar CLOSED (Icon mode / expandable via 3-line hamburger menu in Header)
+ * - Tablet (641px - 1024px): Side Navigation Bar CLOSED
  * - Mobile (<= 640px): Fixed Bottom Navigation Bar
+ * - Floating Map Button (Scroll-hide enabled)
  */
 export default function BuyLayout() {
   const [sidebarExpanded, setSidebarExpanded] = useState(false);
@@ -42,6 +44,9 @@ export default function BuyLayout() {
           <Outlet context={{ categorySearchQuery, setCategorySearchQuery }} />
         </main>
       </div>
+
+      {/* Floating Map Button */}
+      <FloatingMapButton />
 
       {/* Mobile-only Bottom Navigation Bar */}
       <BottomNav />

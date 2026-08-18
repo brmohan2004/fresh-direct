@@ -1,0 +1,251 @@
+/* ==========================================================================
+   Product Filter Sidebar Styles (Desktop & Mobile Drawer)
+   ========================================================================== */
+
+.product-filter-sidebar {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  height: fit-content;
+  position: sticky;
+  top: 80px;
+}
+
+.filter-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.filter-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #111827;
+}
+
+.filter-title-group h3 {
+  font-size: var(--font-base);
+  font-weight: 800;
+}
+
+.filter-icon {
+  color: var(--primary);
+}
+
+.filter-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.reset-filter-btn {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.reset-filter-btn:hover {
+  color: #ef4444;
+  background: #fef2f2;
+}
+
+.close-filter-mobile-btn {
+  display: none;
+  background: #f3f4f6;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.filter-sections-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.filter-group-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.filter-section-title {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.filter-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-checkbox-row input[type="radio"] {
+  display: none;
+}
+
+.custom-radio-mark {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.filter-checkbox-row input[type="radio"]:checked + .custom-radio-mark {
+  border-color: var(--primary);
+  background: #ffffff;
+}
+
+.filter-checkbox-row input[type="radio"]:checked + .custom-radio-mark::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.filter-opt-label {
+  font-size: var(--font-sm);
+  color: #4b5563;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.filter-checkbox-row:hover .filter-opt-label {
+  color: #111827;
+}
+
+.filter-rating-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.rating-chip-btn {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #4b5563;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rating-chip-btn:hover {
+  border-color: #94a3b8;
+  color: #111827;
+}
+
+.rating-chip-btn.active {
+  background: #f0fdf4;
+  border-color: #16a34a;
+  color: #15803d;
+  font-weight: 700;
+}
+
+/* Mobile Drawer Overlay */
+.filter-mobile-backdrop {
+  display: none;
+}
+
+.filter-mobile-footer {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .product-filter-sidebar {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    max-height: 80vh;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .product-filter-sidebar.open-mobile {
+    transform: translateY(0);
+  }
+
+  .filter-mobile-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 98;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+  }
+
+  .close-filter-mobile-btn {
+    display: flex;
+  }
+
+  .filter-mobile-footer {
+    display: block;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .apply-filter-mobile-btn {
+    width: 100%;
+    background: var(--primary);
+    border: none;
+    color: #ffffff;
+    font-size: var(--font-base);
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,207 @@
+/* ==========================================================================
+   Farmer Preview Card Component Styles
+   ========================================================================== */
+
+.farmer-preview-card-floating {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2rem);
+  max-width: 480px;
+  z-index: 50;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  padding: 1rem;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
+  animation: slideUpCard 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+@keyframes slideUpCard {
+  from {
+    transform: translate(-50%, 40px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+.preview-close-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: none;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.preview-close-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.preview-card-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.preview-avatar-box {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2.5px solid #16a34a;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.preview-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-verified-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.preview-info-box {
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.preview-header-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.preview-farmer-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preview-badge-pill {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #15803d;
+  background: #dcfce7;
+  padding: 0.1rem 0.45rem;
+  border-radius: 0.25rem;
+}
+
+.preview-farm-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+  margin: 0.15rem 0 0.4rem 0;
+}
+
+.preview-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.775rem;
+}
+
+.preview-rating-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.rating-num {
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.reviews-num {
+  color: #94a3b8;
+  font-size: 0.7rem;
+}
+
+.preview-dot-separator {
+  color: #cbd5e1;
+}
+
+.preview-distance-text {
+  font-weight: 700;
+  color: #16a34a;
+}
+
+/* Specialties Chips */
+.preview-specialties-row {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.specialty-tag {
+  font-size: 0.675rem;
+  font-weight: 700;
+  color: #334155;
+  background: #f1f5f9;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.25rem;
+}
+
+/* Action Row */
+.preview-actions-row {
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.btn-view-farmer-profile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.65rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-view-farmer-profile:hover {
+  background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.35);
+}
+
+.btn-view-farmer-profile:active {
+  transform: scale(0.98);
+}

@@ -1,0 +1,95 @@
+/* ==========================================================================
+   AddAddressModal Component Styles
+   ========================================================================== */
+
+.mobile-address-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeInOverlay 0.25s ease;
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mobile-address-modal-card {
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  background: #ffffff;
+  border-radius: 1.5rem 1.5rem 0 0;
+  padding: 1.25rem;
+  box-shadow: 0 -10px 32px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  animation: slideUpSheet 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+@keyframes slideUpSheet {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.modal-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.form-header-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.form-header-desc {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.modal-close-btn {
+  background: #f1f5f9;
+  border: none;
+  color: #64748b;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.modal-form-scroll-body {
+  overflow-y: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  max-height: calc(90vh - 80px);
+}

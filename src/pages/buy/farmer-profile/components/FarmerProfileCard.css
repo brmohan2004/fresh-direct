@@ -1,0 +1,252 @@
+/* ==========================================================================
+   FarmerProfileCard Component Styles (Slick & Minimalist)
+   ========================================================================== */
+
+.farmer-main-card {
+  background: #ffffff;
+  border-radius: clamp(1rem, 2vw, 1.25rem);
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  padding: clamp(1.1rem, 2.5vw, 1.6rem);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.02);
+  margin-top: clamp(-45px, -6vw, -65px);
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.farmer-card-top {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  min-width: 0;
+  position: relative;
+}
+
+.farmer-avatar-container {
+  width: clamp(68px, 9vw, 96px);
+  height: clamp(68px, 9vw, 96px);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px #ffffff, 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.farmer-avatar-container:hover {
+  transform: scale(1.03);
+}
+
+.farmer-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.farmer-identity {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.farmer-name-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.farmer-name {
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.farmer-location-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #64748b;
+  font-size: clamp(0.78rem, 1vw, 0.85rem);
+  font-weight: 500;
+}
+
+.location-pin {
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+.farmer-stats-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.meta-rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #fffbeb;
+  border: 1px solid #fef3c7;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.rating-score {
+  font-weight: 800;
+  color: #92400e;
+}
+
+.rating-count {
+  color: #b45309;
+  font-weight: 500;
+}
+
+.meta-orders-pill {
+  display: inline-flex;
+  align-items: center;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #15803d;
+}
+
+.farmer-verified-badge-box {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: 0.2rem;
+}
+
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.08);
+}
+
+/* Desktop Card Actions */
+.farmer-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  align-self: center;
+  margin-left: auto;
+}
+
+.btn-primary-action {
+  background: #16a34a;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+}
+
+.btn-primary-action:hover {
+  background: #15803d;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.3);
+}
+
+.btn-outline-action {
+  background: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 0.6rem 1.1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-action:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+/* Mobile Screen Specific Tweaks */
+@media (max-width: 640px) {
+  .farmer-main-card {
+    padding: 0.9rem;
+    border-radius: 1rem;
+    margin-top: -38px;
+  }
+
+  .farmer-card-top {
+    position: relative;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .farmer-avatar-container {
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 0 0 2.5px #ffffff, 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .farmer-name {
+    font-size: 1.05rem;
+    padding-right: 95px;
+  }
+
+  .farmer-location-row {
+    font-size: 0.725rem;
+  }
+
+  .farmer-stats-meta {
+    gap: 0.35rem;
+    margin-top: 0.2rem;
+  }
+
+  .meta-rating-pill,
+  .meta-orders-pill {
+    padding: 0.15rem 0.45rem;
+    font-size: 0.68rem;
+  }
+
+  .farmer-verified-badge-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+  }
+
+  .verified-badge {
+    padding: 0.2rem 0.55rem;
+    font-size: 0.68rem;
+    border-radius: 9999px;
+  }
+}

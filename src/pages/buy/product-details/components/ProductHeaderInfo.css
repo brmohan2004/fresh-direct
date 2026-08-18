@@ -1,0 +1,160 @@
+.product-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.product-title-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.product-main-title {
+  font-size: var(--font-3xl);
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.farmer-affiliation-link {
+  margin-top: 0.25rem;
+}
+
+.farmer-name-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: #4b5563;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.farmer-name-badge:hover {
+  color: var(--primary);
+}
+
+.verified-check {
+  flex-shrink: 0;
+}
+
+.product-price-box {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.price-tag-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 0.15rem;
+}
+
+.current-price {
+  font-size: clamp(1.4rem, 2vw + 1rem, 1.85rem);
+  font-weight: 800;
+  color: #111827;
+}
+
+.price-unit {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.discount-tag-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.1rem;
+}
+
+.original-price {
+  font-size: 0.825rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.savings-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #15803d;
+  background: #dcfce7;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+.product-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--font-sm);
+}
+
+.rating-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.rating-score {
+  font-weight: 800;
+}
+
+.rating-count {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.divider-dot {
+  color: #d1d5db;
+}
+
+.bought-stat-text {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.product-badges-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.feature-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.725rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+}
+
+.feature-badge.fresh {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #16a34a;
+}
+
+.feature-badge.organic {
+  background: #fefce8;
+  border-color: #fef08a;
+  color: #ca8a04;
+}
+
+.feature-badge.safe {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #2563eb;
+}

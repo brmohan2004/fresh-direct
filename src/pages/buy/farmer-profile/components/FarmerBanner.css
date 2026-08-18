@@ -1,0 +1,126 @@
+/* ==========================================================================
+   FarmerBanner Component Styles
+   ========================================================================== */
+
+/* Mobile-Only Floating Header (Transparent Header with Back, Fav, Share) */
+.mobile-floating-header {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .mobile-floating-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    width: calc(100% - 24px);
+    z-index: 50;
+    pointer-events: none;
+    box-sizing: border-box;
+  }
+
+  .mobile-float-btn {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    pointer-events: auto;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  .mobile-float-btn:active {
+    transform: scale(0.92);
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .mobile-float-btn.fav-btn.active {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: #ffffff;
+  }
+
+  .mobile-float-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    pointer-events: auto;
+    flex-shrink: 0;
+  }
+}
+
+/* Cover / Banner Section */
+.farmer-banner-wrapper {
+  position: relative;
+  width: 100%;
+  height: clamp(180px, 25vw, 260px);
+  overflow: hidden;
+  background: #15803d;
+}
+
+.farmer-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.farmer-cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.desktop-hero-img {
+  position: absolute;
+  right: 6%;
+  bottom: 0;
+  height: 110%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+  pointer-events: none;
+}
+
+/* Mobile Banner Badge Overlay */
+.mobile-banner-badge {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .mobile-banner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    position: absolute;
+    top: 65px;
+    left: 1rem;
+    background: rgba(22, 163, 74, 0.85);
+    backdrop-filter: blur(6px);
+    color: #ffffff;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.725rem;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .desktop-hero-img {
+    display: none;
+  }
+}

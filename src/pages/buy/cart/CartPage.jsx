@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Leaf, Trash2, Tag, ChevronRight, Plus, ArrowRight } from 'lucide-react';
+import { Leaf, Trash2, Tag, Plus, ArrowRight } from 'lucide-react';
 import CartItemRow from './components/CartItemRow';
-import CartSummaryCard from './components/CartSummaryCard';
+import CartFloatingCheckoutBar from './components/CartFloatingCheckoutBar';
 import './CartPage.css';
 
 // Asset Imports
@@ -16,7 +16,7 @@ import prodPeppers from '../../../assets/prod_peppers.png';
 import prodGreenBeans from '../../../assets/prod_green_beans.png';
 import prodCauliflower from '../../../assets/prod_cauliflower.png';
 
-// Initial Mock Cart Items matching reference design
+// Initial Mock Cart Items
 const initialCartItems = [
   {
     id: 1,
@@ -98,26 +98,23 @@ export default function CartPage() {
 
   const totalItemsCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const freeDeliveryTotal = 318; // Subtotal (186) + 132 remaining = 318 threshold
+  const freeDeliveryTotal = 318;
   const remainingForFree = Math.max(0, freeDeliveryTotal - subtotal);
+  const deliveryCharge = subtotal >= freeDeliveryTotal ? 0 : 25;
+  const grandTotal = subtotal + deliveryCharge;
 
   return (
     <div className="cart-page-wrapper">
       <div className="cart-page-container">
-        
-        {/* Top Header Row (Desktop view) */}
-        <div className="cart-top-header desktop-only">
-          <div className="cart-title-group">
-            <h1 className="cart-heading">My Cart</h1>
-            <span className="cart-item-count">({totalItemsCount} items)</span>
-          </div>
-          {cartItems.length > 0 && (
+        {/* Top Action Row */}
+        {cartItems.length > 0 && (
+          <div className="cart-top-header" style={{ justifyContent: 'flex-end' }}>
             <button className="clear-cart-btn" onClick={handleClearCart}>
               <span>Clear Cart</span>
               <Trash2 size={15} />
             </button>
-          )}
-        </div>
+          </div>
+        )}
 
         {cartItems.length === 0 ? (
           <div className="empty-cart-card">
@@ -129,81 +126,64 @@ export default function CartPage() {
             </button>
           </div>
         ) : (
-          <div className="cart-layout-grid">
-            
-            {/* Left Column: Items List & Farmer Support Banner */}
-            <div className="cart-left-col">
-              
-              {/* Farmer Support Banner */}
-              <div className="farmer-support-banner">
-                <div className="banner-left">
-                  <div className="leaf-icon-badge">
-                    <Leaf size={16} />
-                  </div>
-                  <p className="farmer-text">
-                    Your order supports <strong>local farmers</strong> and helps build a better community.
-                  </p>
+          <div className="cart-layout-single-col">
+            {/* Farmer Support Banner */}
+            <div className="farmer-support-banner">
+              <div className="banner-left">
+                <div className="leaf-icon-badge">
+                  <Leaf size={16} />
                 </div>
-                <div className="farmer-illustration-box desktop-only">
-                  <svg width="68" height="42" viewBox="0 0 68 42" fill="none">
-                    <path d="M12 36c0-6 4.5-10 10-10s10 4 10 10" stroke="#16a34a" strokeWidth="1.8" strokeLinecap="round" />
-                    <circle cx="22" cy="18" r="5" stroke="#16a34a" strokeWidth="1.8" />
-                    <path d="M15 14l7-4 7 4" stroke="#16a34a" strokeWidth="1.8" strokeLinecap="round" />
-                    <path d="M40 36V22l14-6 12 6v14H40z" stroke="#16a34a" strokeWidth="1.5" />
-                    <path d="M48 36V28h6v8" stroke="#16a34a" strokeWidth="1.5" />
-                  </svg>
-                </div>
+                <p className="farmer-text">
+                  Your order supports <strong>local farmers</strong> and helps build a better community.
+                </p>
               </div>
-
-              {/* Items Table Header (Desktop) */}
-              <div className="cart-table-header desktop-only">
-                <span className="col-product">Product</span>
-                <span className="col-price">Price</span>
-                <span className="col-quantity">Quantity</span>
-                <span className="col-total">Total</span>
+              <div className="farmer-illustration-box desktop-only">
+                <svg width="68" height="42" viewBox="0 0 68 42" fill="none">
+                  <path d="M12 36c0-6 4.5-10 10-10s10 4 10 10" stroke="#16a34a" strokeWidth="1.8" strokeLinecap="round" />
+                  <circle cx="22" cy="18" r="5" stroke="#16a34a" strokeWidth="1.8" />
+                  <path d="M15 14l7-4 7 4" stroke="#16a34a" strokeWidth="1.8" strokeLinecap="round" />
+                  <path d="M40 36V22l14-6 12 6v14H40z" stroke="#16a34a" strokeWidth="1.5" />
+                  <path d="M48 36V28h6v8" stroke="#16a34a" strokeWidth="1.5" />
+                </svg>
               </div>
-
-              {/* Cart Item Rows */}
-              <div className="cart-items-list">
-                {cartItems.map((item) => (
-                  <CartItemRow
-                    key={item.id}
-                    item={item}
-                    onUpdateQuantity={handleUpdateQuantity}
-                    onRemove={handleRemoveItem}
-                  />
-                ))}
-              </div>
-
-              {/* Add More Items Banner */}
-              <div className="add-more-banner">
-                <div className="banner-tag-group">
-                  <Tag size={18} className="tag-icon" />
-                  <span>
-                    Add items worth <strong>₹{remainingForFree}</strong> more to get <strong>FREE delivery</strong>
-                  </span>
-                </div>
-                <button
-                  className="add-more-btn"
-                  onClick={() => navigate('/buy/products')}
-                >
-                  <span>Add More Items</span>
-                  <ArrowRight size={16} />
-                </button>
-              </div>
-
             </div>
 
-            {/* Right Column: Order Summary Card */}
-            <div className="cart-right-col">
-              <CartSummaryCard
-                subtotal={subtotal}
-                itemCount={totalItemsCount}
-                threshold={remainingForFree}
-                freeDeliveryTotal={freeDeliveryTotal}
-              />
+            {/* Items Table Header (Desktop) */}
+            <div className="cart-table-header desktop-only">
+              <span className="col-product">Product</span>
+              <span className="col-price">Price</span>
+              <span className="col-quantity">Quantity</span>
+              <span className="col-total">Total</span>
             </div>
 
+            {/* Cart Item Rows */}
+            <div className="cart-items-list">
+              {cartItems.map((item) => (
+                <CartItemRow
+                  key={item.id}
+                  item={item}
+                  onUpdateQuantity={handleUpdateQuantity}
+                  onRemove={handleRemoveItem}
+                />
+              ))}
+            </div>
+
+            {/* Add More Items Banner */}
+            <div className="add-more-banner">
+              <div className="banner-tag-group">
+                <Tag size={18} className="tag-icon" />
+                <span>
+                  Add items worth <strong>₹{remainingForFree}</strong> more to get <strong>FREE delivery</strong>
+                </span>
+              </div>
+              <button
+                className="add-more-btn"
+                onClick={() => navigate('/buy/products')}
+              >
+                <span>Add More Items</span>
+                <ArrowRight size={16} />
+              </button>
+            </div>
           </div>
         )}
 
@@ -247,8 +227,19 @@ export default function CartPage() {
             ))}
           </div>
         </div>
-
       </div>
+
+      {/* Modular Floating Checkout Bar & Order Summary Dropdown */}
+      {cartItems.length > 0 && (
+        <CartFloatingCheckoutBar
+          subtotal={subtotal}
+          totalItemsCount={totalItemsCount}
+          remainingForFree={remainingForFree}
+          freeDeliveryTotal={freeDeliveryTotal}
+          deliveryCharge={deliveryCharge}
+          grandTotal={grandTotal}
+        />
+      )}
     </div>
   );
 }

@@ -1,0 +1,154 @@
+/* ==========================================================================
+   FarmInfoSidebar Component Styles
+   ========================================================================== */
+
+.farmer-sidebar-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.profile-sidebar-card {
+  background: #ffffff;
+  border-radius: clamp(0.75rem, 1.2vw, 1rem);
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+}
+
+.sidebar-card-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 0.9rem 0;
+  letter-spacing: -0.01em;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.info-icon {
+  color: #16a34a;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.info-label {
+  font-size: 0.725rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.check-bullet {
+  color: #ffffff;
+  background: #16a34a;
+  border-radius: 50%;
+  padding: 0.1rem;
+  flex-shrink: 0;
+}
+
+/* Trust Badges Row */
+.trust-badges-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.9rem 0.5rem;
+}
+
+.trust-badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.badge-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-icon-circle.green {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.badge-icon-circle.emerald {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.badge-icon-circle.blue {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.badge-text {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #4b5563;
+}
+
+@media (max-width: 640px) {
+  .farmer-sidebar-column {
+    order: 2;
+    gap: 0.85rem;
+  }
+
+  .profile-sidebar-card {
+    padding: 0.85rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .badge-text {
+    font-size: 0.65rem;
+    word-break: break-word;
+  }
+}

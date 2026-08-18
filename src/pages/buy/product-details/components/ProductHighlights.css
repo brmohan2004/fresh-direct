@@ -1,0 +1,77 @@
+.product-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.highlight-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.highlight-icon-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.highlight-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.highlight-title {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: #111827;
+}
+
+.highlight-desc {
+  font-size: 0.725rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 640px) {
+  .product-highlights-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .highlight-card {
+    padding: 0.6rem 0.5rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.35rem;
+  }
+
+  .highlight-icon-badge {
+    width: 32px;
+    height: 32px;
+  }
+
+  .highlight-desc {
+    font-size: 0.65rem;
+    white-space: normal;
+  }
+}
