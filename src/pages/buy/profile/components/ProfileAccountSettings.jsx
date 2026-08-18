@@ -4,7 +4,6 @@ import {
   User,
   MapPin,
   CreditCard,
-  Heart,
   Bell,
   Headphones,
   ShieldCheck,
@@ -39,13 +38,7 @@ export default function ProfileAccountSettings({ onTriggerLogout }) {
       icon: CreditCard,
       action: () => navigate('/buy/checkout')
     },
-    {
-      id: 'wishlist',
-      title: 'My Wishlist',
-      desc: 'View items you\'ve saved',
-      icon: Heart,
-      action: () => navigate('/buy/wishlist')
-    },
+
     {
       id: 'notifications',
       title: 'Notifications',
